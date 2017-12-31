@@ -1,0 +1,44 @@
+name:                vivian
+version:             0.1.0.0
+github:              "githubuser/vivian"
+license:             BSD3
+author:              "ruko"
+maintainer:          "rukokarasu@gmail.com"
+copyright:           "2017 ruko"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            Mystery
+category:            Web
+
+description:         Please see the README on Github at <https://github.com/rukokarasu/vivian#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  vivian-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - vivian
+
+tests:
+  vivian-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - vivian
